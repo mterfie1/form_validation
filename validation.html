@@ -1,0 +1,180 @@
+<html>
+<head>
+	<title>Assignment 2</title>
+	<link href="style.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <h3 class="">JS Form Validation</h3>
+	<form>
+    <div>
+    	<p>
+        <div class="input">
+			<p class="alert_msg" id="alert1">  Please Enter an ID</p>
+    		<label for="ID">ID: </label>
+    		<input type="text" id="id" name="ID" />
+    	</div>
+		</p>
+		<p>
+		<div class="fname">
+			<p class="alert_msg" id="alert2">Please Enter Your First Name</p>
+    		<label for="Fname">FirstName: </label>
+    		<input type="text" id="fname" name="Fname" />
+    	</div>
+		</p>
+		<p>
+		<div class="lname">
+			<p class="alert_msg" id="alert3">Please Enter Your Last Name</p>
+    		<label for="Lname">LastName: </label>
+    		<input type="text" id="lname" name="Lname" />
+    	</div>
+		</p>
+    	<div>
+    		<input type="button" name="add" value="Add" onclick="javascript:validateForm()"/>
+    	</div>
+		<p>
+			<div id="display"></div>​
+			<div id="display2"></div>​
+			<div id="display3"></div>​
+
+
+		</p>
+    </div>
+	</form>
+	<script type="text/javascript">
+	
+		document.getElementById('alert1').style.visibility = "hidden";
+		document.getElementById('alert2').style.visibility = "hidden";
+		document.getElementById('alert3').style.visibility = "hidden";
+		
+		var bool = true;
+		
+		function validateForm(){
+		
+			if (document.getElementById("id").value == "" && document.getElementById("fname").value == "" && document.getElementById("lname").value == "")
+			{
+				alert( "You forgot to enter the following field(s): ID,FirstName,LastName" );
+				document.getElementById('alert1').style.visibility = "visible";
+				document.getElementById('alert2').style.visibility = "visible";
+				document.getElementById('alert3').style.visibility = "visible";
+				
+				document.getElementById('display').style.visibility = "hidden";
+				document.getElementById('display2').style.visibility = "hidden";
+				document.getElementById('display3').style.visibility = "hidden";
+				
+				bool = false;
+				
+			}
+			
+			else if (document.getElementById("id").value == "" && document.getElementById("fname").value == "") 
+			{
+				alert( "You forgot to enter the following field(s): ID,FirstName" );
+				document.getElementById('alert1').style.visibility = "visible";
+				document.getElementById('alert2').style.visibility = "visible";
+				document.getElementById('alert3').style.visibility = "hidden";
+				
+				document.getElementById('display').style.visibility = "hidden";
+				document.getElementById('display2').style.visibility = "hidden";
+				document.getElementById('display3').style.visibility = "hidden";
+				
+				bool = false;
+			}
+			
+			else if (document.getElementById("id").value == "" && document.getElementById("lname").value == "")
+			{
+				alert( "You forgot to enter the following field(s): ID,LastName" );
+				document.getElementById('alert1').style.visibility = "visible";
+				document.getElementById('alert2').style.visibility = "hidden";
+				document.getElementById('alert3').style.visibility = "visible";
+				
+				document.getElementById('display').style.visibility = "hidden";
+				document.getElementById('display2').style.visibility = "hidden";
+				document.getElementById('display3').style.visibility = "hidden";
+				
+				bool = false;
+			}
+			
+			else if (document.getElementById("fname").value == "" && document.getElementById("lname").value == "")
+			{
+				alert( "You forgot to enter the following field(s): FirstName,LastName" );
+				document.getElementById('alert1').style.visibility = "hidden";
+				document.getElementById('alert2').style.visibility = "visible";
+				document.getElementById('alert3').style.visibility = "visible";
+				
+				document.getElementById('display').style.visibility = "hidden";
+				document.getElementById('display2').style.visibility = "hidden";
+				document.getElementById('display3').style.visibility = "hidden";
+				
+				bool = false;
+			}
+			
+			else if (document.getElementById("id").value == "")
+			{
+				alert( "You forgot to enter the following field(s): ID" );
+				document.getElementById('alert1').style.visibility = "visible";
+				document.getElementById('alert2').style.visibility = "hidden";
+				document.getElementById('alert3').style.visibility = "hidden";
+				
+				document.getElementById('display').style.visibility = "hidden";
+				document.getElementById('display2').style.visibility = "hidden";
+				document.getElementById('display3').style.visibility = "hidden";
+				
+				bool = false;
+			}
+			
+			else if (document.getElementById("fname").value == "" )
+			{
+				alert( "You forgot to enter the following field(s): FirstName" );
+				document.getElementById('alert1').style.visibility = "hidden";
+				document.getElementById('alert2').style.visibility = "visible";
+				document.getElementById('alert3').style.visibility = "hidden";
+				
+				document.getElementById('display').style.visibility = "hidden";
+				document.getElementById('display2').style.visibility = "hidden";
+				document.getElementById('display3').style.visibility = "hidden";
+				
+				bool = false;
+			}
+			
+			else if (document.getElementById("lname").value == "")
+			{
+				alert( "You forgot to enter the following field(s): LastName" );
+				document.getElementById('alert1').style.visibility = "hidden";
+				document.getElementById('alert2').style.visibility = "hidden";
+				document.getElementById('alert3').style.visibility = "visible";
+				
+				document.getElementById('display').style.visibility = "hidden";
+				document.getElementById('display2').style.visibility = "hidden";
+				document.getElementById('display3').style.visibility = "hidden";
+				
+				bool = false;
+			}
+			
+			else {
+			
+				alert( "Validation successful!" );
+				
+				document.getElementById('alert1').style.visibility = "hidden";
+				document.getElementById('alert2').style.visibility = "hidden";
+				document.getElementById('alert3').style.visibility = "hidden";
+				
+				document.getElementById('display').innerHTML = document.getElementById("id").value;
+				document.getElementById('display2').innerHTML = document.getElementById("fname").value;
+				document.getElementById('display3').innerHTML = document.getElementById("lname").value;
+				
+				document.getElementById('display').style.visibility = "visible";
+				document.getElementById('display2').style.visibility = "visible";
+				document.getElementById('display3').style.visibility = "visible";
+				
+		
+				 bool = true;
+
+			}
+			
+		
+			
+		
+		   
+		}    	
+    </script>
+</body>
+</html>
